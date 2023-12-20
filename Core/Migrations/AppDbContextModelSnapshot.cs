@@ -113,12 +113,12 @@ namespace Core.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RegionsId")
+                    b.Property<int>("RegionId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RegionsId");
+                    b.HasIndex("RegionId");
 
                     b.ToTable("Customers");
                 });
@@ -169,13 +169,13 @@ namespace Core.Migrations
 
             modelBuilder.Entity("Core.Entities.Customer", b =>
                 {
-                    b.HasOne("Core.Entities.Region", "Regions")
+                    b.HasOne("Core.Entities.Region", "Region")
                         .WithMany("Customers")
-                        .HasForeignKey("RegionsId")
+                        .HasForeignKey("RegionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Regions");
+                    b.Navigation("Region");
                 });
 
             modelBuilder.Entity("Core.Entities.ApplicationType", b =>

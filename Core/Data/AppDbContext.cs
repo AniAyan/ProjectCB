@@ -12,7 +12,6 @@ namespace Core.Data
 {
     public class AppDbContext : DbContext
     {
-        //public AppDbContext() { }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Application> Applications { get; set; }
         public DbSet<ApplicationType> ApplicationTypes { get; set; }
