@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Data.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace View.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
+        private readonly CustomerRepository customerRepository;
         private ObservableCollection<CustomerViewModel> customers;
 
         public ObservableCollection<CustomerViewModel> Customers
@@ -20,5 +22,15 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Customers));
             }
         }
+
+        public MainViewModel(CustomerRepository customerRepository)
+        {
+            this.customerRepository = customerRepository;
+        }
+
+        /*private List<CustomerViewModel> GetCustomersFromCore()
+        {
+            return customerRepository.GetCustomers();
+        }*/
     }
 }

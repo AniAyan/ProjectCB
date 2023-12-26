@@ -19,13 +19,12 @@ namespace API.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
+        /*[HttpGet]
         public IActionResult GetCustomers()
         {
-            var customers = dbContext.Customers.ToList();
-            var apiCustomer = mapper.Map<List<Customer>>(customers);
+            var apiCustomer = 
 
             return Ok(apiCustomer);
-        }
+        }*/
     }
 }

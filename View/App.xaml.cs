@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Core.Data;
+using Core.Data.Repositories;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using View.ViewModels;
 
 namespace View
 {
@@ -13,5 +17,36 @@ namespace View
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var serviceProvider = ConfigureServices();
+
+            // Create the main window and set its DataContext to your main ViewModel
+            var mainWindow = new MainWindow
+            {
+                DataContext = serviceProvider.GetService<MainViewModel>()
+            };
+
+            mainWindow.Show();
+        }
+
+        private IServiceProvider ConfigureServices()
+        {
+            var services = new ServiceCollection();
+
+            // Register services and view models
+            services.AddScoped<AppDbContext>();
+            services.AddScoped<CustomerRepository>();
+            services.AddAutoMapper(typeof(App));
+
+            services.AddTransient<MainViewModel>();
+
+            // Other service registrations...
+
+            // Build and return the service provider
+            return services.BuildServiceProvider();
+        }
     }
 }

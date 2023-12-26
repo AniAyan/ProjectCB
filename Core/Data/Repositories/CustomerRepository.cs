@@ -1,4 +1,5 @@
-﻿using Core.Entities;
+﻿//using Core.Entities;
+using Core.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,23 @@ namespace Core.Data.Repositories
 
         public List<Customer> GetCustomers()
         {
-            return dbContext.Customers.ToList();
+            var customersDB = dbContext.Customers.ToList();
+            var customersDTO = new List<Customer>();
+
+            foreach (var customerDB in customersDB)
+            {
+                var customer = new Customer
+                {
+                    Id = customerDB.Id,
+                    FirstName = customerDB.FirstName,
+                    LastName = customerDB.LastName,
+                    Region = customerDB.Region.Name,
+                    Address = customerDB.Address
+                };
+                customersDTO.Add(customer);
+            }
+
+            return customersDTO;
         }
     }
 }
