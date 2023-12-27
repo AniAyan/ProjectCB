@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\API.csproj": {}
+    "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\API.csproj": {
+    "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\API.csproj",
+        "projectPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\API.csproj",
         "packagesPath": "C:\\Users\\ani.atchemyan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\obj\\",
+        "outputPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ani.atchemyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\Core.csproj"
+              "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj"
               }
             }
           }
@@ -52,7 +52,17 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
@@ -90,14 +100,14 @@
         }
       }
     },
-    "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\Core.csproj": {
+    "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\ani.atchemyan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\obj\\",
+        "outputPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ani.atchemyan\\AppData\\Roaming\\NuGet\\NuGet.Config",

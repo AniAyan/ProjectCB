@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5an6B63KcqWjGJltUr4KTiM9sqaccvb619i1oB/Qs+TGKDHqjA3nXVhwjhzDNQLgMFDiOOqxirFR8Mc6kUs8NQ==",
+  "dgSpecHash": "WgHsbIUCW5WATvsd96eEzK/IhI8Fv6FPIX9VJMiCVF+Cuu0tCbgcqPjoSzcK//HbjnGOpEaif9xbX1c23cYXmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\View\\View.csproj",
+  "projectFilePath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\View\\View.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -16,6 +16,7 @@
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.0\\microsoft.entityframeworkcore.design.6.0.0.nupkg.sha512",
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.0\\microsoft.entityframeworkcore.relational.6.0.0.nupkg.sha512",
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.0\\microsoft.entityframeworkcore.sqlserver.6.0.0.nupkg.sha512",
+    "C:\\Users\\ani.atchemyan\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.0\\microsoft.entityframeworkcore.tools.6.0.0.nupkg.sha512",
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0\\microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
     "C:\\Users\\ani.atchemyan\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",

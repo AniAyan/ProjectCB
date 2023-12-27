@@ -26,3 +26,4 @@ C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\Core\obj\Debug\net6.0\refi
 C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\Core\obj\Debug\net6.0\Core.pdb
 C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\Core\obj\Debug\net6.0\Core.genruntimeconfig.cache
 C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\Core\obj\Debug\net6.0\ref\Core.dll
+C:\Users\ani.atchemyan\source\repos\AniAyan\ProjectCB\Core\bin\Debug\net6.0\Data\SqlScripts\SeedData.sql

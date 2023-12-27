@@ -207,6 +207,18 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
         "type": "package",
         "build": {
@@ -1348,6 +1360,30 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.6.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.0": {
+      "sha512": "m9e6nFnkyRdKcrTFO8rl3ZihCIKrYdECw+fHZVbKz6TBMwKhih/N0sjPnNt0k7sZPvI8izKPkh1d+z4OR2qgXQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/6.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/_._",
+        "microsoft.entityframeworkcore.tools.6.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -2630,7 +2666,9 @@
     "net6.0": [
       "AutoMapper >= 12.0.1",
       "Core >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.0",
       "Microsoft.Extensions.DependencyInjection >= 6.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2641,11 +2679,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\API.csproj",
+      "projectPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\API.csproj",
       "packagesPath": "C:\\Users\\ani.atchemyan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\API\\obj\\",
+      "outputPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ani.atchemyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2666,8 +2704,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\ani.atchemyan\\Source\\Repos\\AniAyan\\ProjectCB\\Core\\Core.csproj"
+            "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj"
             }
           }
         }
@@ -2686,7 +2724,17 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",

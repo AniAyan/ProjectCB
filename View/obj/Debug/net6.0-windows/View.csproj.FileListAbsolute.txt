@@ -61,3 +61,4 @@ C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\View\obj\Debug\net6.0-wind
 C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\View\obj\Debug\net6.0-windows\View.pdb
 C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\View\obj\Debug\net6.0-windows\View.genruntimeconfig.cache
 C:\Users\ani.atchemyan\Source\Repos\AniAyan\ProjectCB\View\obj\Debug\net6.0-windows\ref\View.dll
+C:\Users\ani.atchemyan\source\repos\AniAyan\ProjectCB\View\bin\Debug\net6.0-windows\Data\SqlScripts\SeedData.sql
