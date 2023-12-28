@@ -11,28 +11,20 @@ VALUES ('Aragatsotn'),
 	   ('Vayots'),
 	   ('Yerevan');
 
-	   Go
-
 INSERT INTO Customers (FirstName, LastName, RegionId, Address)
 VALUES ('Arsaces', 'Arsacid', 1, 'Street 1'),
 		('Tiridates', 'Arsacid', 2, 'Street 2'),
 		('Sanatruces', 'Arsacid', 3, 'Street 3'),
 		('Vologases', 'Arsacid', 4, 'Street 4');
 
-		Go
-
 INSERT INTO Branches (Name) 
 VALUES ('Gyumri'),
 	   ('Kapan'),
 	   ('Hrazdan');
 
-		Go
-
 INSERT INTO ApplicationTypes (Name) 
 VALUES ('Loan'),
 	   ('Deposit');
-
-		Go
 
 INSERT INTO Applications (TypeId, CustomerId, Amount, Date, Rate, BranchId) 
 VALUES (1, 1, 10000, GETDATE(), 10, 1),

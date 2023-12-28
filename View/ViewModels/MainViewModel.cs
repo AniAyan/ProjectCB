@@ -1,16 +1,20 @@
-﻿using Core.Data.Repositories;
+﻿using AutoMapper;
+using Core.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using View.Mapping;
 
 namespace View.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
         private readonly CustomerRepository customerRepository;
+        private readonly CustomerDTOViewModelMapper customerMapper;
+
         private ObservableCollection<CustomerViewModel> customers;
 
         public ObservableCollection<CustomerViewModel> Customers
@@ -23,14 +27,17 @@ namespace View.ViewModels
             }
         }
 
-        public MainViewModel(CustomerRepository customerRepository)
+        public MainViewModel(CustomerRepository customerRepository, CustomerDTOViewModelMapper customerMapper)
         {
             this.customerRepository = customerRepository;
+            this.customerMapper = customerMapper;
+            LoadCustomers();
         }
 
-        /*private List<CustomerViewModel> GetCustomersFromCore()
+        private void LoadCustomers()
         {
-            return customerRepository.GetCustomers();
-        }*/
+            var customersFromCore = customerRepository.GetCustomers();
+            Customers = new ObservableCollection<CustomerViewModel>(customerMapper.MapToViewModelList(customersFromCore));
+        }
     }
 }

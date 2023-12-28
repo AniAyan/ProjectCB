@@ -56,7 +56,7 @@ namespace Core.Migrations
 
                     b.HasIndex("TypeId");
 
-                    b.ToTable("Applications", (string)null);
+                    b.ToTable("Applications");
                 });
 
             modelBuilder.Entity("Core.Entities.ApplicationType", b =>
@@ -73,7 +73,7 @@ namespace Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ApplicationTypes", (string)null);
+                    b.ToTable("ApplicationTypes");
                 });
 
             modelBuilder.Entity("Core.Entities.Branch", b =>
@@ -90,7 +90,7 @@ namespace Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Branches", (string)null);
+                    b.ToTable("Branches");
                 });
 
             modelBuilder.Entity("Core.Entities.Customer", b =>
@@ -120,7 +120,7 @@ namespace Core.Migrations
 
                     b.HasIndex("RegionId");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Core.Entities.Region", b =>
@@ -137,7 +137,7 @@ namespace Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Regions", (string)null);
+                    b.ToTable("Regions");
                 });
 
             modelBuilder.Entity("Core.Entities.Application", b =>

@@ -1,5 +1,6 @@
 ﻿using Core.Data;
 using Core.Data.Repositories;
+using Core.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -10,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using View.Mapping;
 using View.ViewModels;
 
 namespace View
@@ -23,48 +25,48 @@ namespace View
         {
             base.OnStartup(e);
 
+            Directory.SetCurrentDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "..", "Core"));
+            var currentWorkingDirectory = Directory.GetCurrentDirectory();
+            var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var serviceProvider = ConfigureServices();
 
             using (var scope = serviceProvider.CreateScope())
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-                // Specify the relative path to the SQL script
-                var scriptFilePath = Path.Combine("..", "..", "..", "..", "Core", "Data", "SqlScripts", "SeedData.sql");
+                var isSeeded = dbContext.Regions.Any();
 
-                // Get the full path to the script file
-                var scriptFullPath = Path.Combine(Directory.GetCurrentDirectory(), scriptFilePath);
+                if (!isSeeded)
+                {
+                    var scriptFilePath = Path.Combine("Data", "SqlScripts", "SeedData.sql");
+                    var scriptFullPath = Path.Combine(Directory.GetCurrentDirectory(), scriptFilePath);
+                    var scriptContent = File.ReadAllText(scriptFullPath);
+                    dbContext.Database.ExecuteSqlRaw(scriptContent);
+                }
 
-                // Read SQL script content
-                var scriptContent = File.ReadAllText(scriptFullPath);
+                var mainWindow = new MainWindow
+                {
+                    DataContext = serviceProvider.GetService<MainViewModel>()
+                };
 
-                // Execute the script
-                dbContext.Database.ExecuteSqlRaw(scriptContent);
+                mainWindow.Show();
             }
-
-            // Create the main window and set its DataContext to your main ViewModel
-            var mainWindow = new MainWindow
-            {
-                DataContext = serviceProvider.GetService<MainViewModel>()
-            };
-
-            mainWindow.Show();
         }
 
         private IServiceProvider ConfigureServices()
         {
             var services = new ServiceCollection();
 
-            // Register services and view models
             services.AddScoped<AppDbContext>();
+            services.AddScoped<CustomerEntityDTOMapper>();
+            services.AddScoped<ApplicationEntityDTOMapper>();
             services.AddScoped<CustomerRepository>();
-            services.AddAutoMapper(typeof(App));
+            services.AddScoped<ApplicationRepository>();
+            services.AddScoped<CustomerDTOViewModelMapper>();
+            services.AddScoped<ApplicationDTOViewModelMapper>();
 
             services.AddTransient<MainViewModel>();
 
-            // Other service registrations...
-
-            // Build and return the service provider
             return services.BuildServiceProvider();
         }
     }

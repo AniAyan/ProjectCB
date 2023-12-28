@@ -6,16 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+
 namespace View.ViewModels
 {
-    class CustomerViewModel : ViewModelBase
+    public class CustomerViewModel : ViewModelBase
     {
-        private Customer customer;
-        public CustomerViewModel(Customer customer)
-        {
-            this.customer = customer;
-        }
-        public int Id => customer.Id;
+        public int Id;
 
         private string firstName;
         public string FirstName 

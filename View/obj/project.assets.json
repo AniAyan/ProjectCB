@@ -2461,38 +2461,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ani.atchemyan\\.nuget\\packages\\": {}
+    "C:\\Users\\WIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\View\\View.csproj",
+      "projectUniqueName": "C:\\Users\\WIN\\source\\repos\\ProjectCB\\View\\View.csproj",
       "projectName": "View",
-      "projectPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\View\\View.csproj",
-      "packagesPath": "C:\\Users\\ani.atchemyan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\View\\obj\\",
+      "projectPath": "C:\\Users\\WIN\\source\\repos\\ProjectCB\\View\\View.csproj",
+      "packagesPath": "C:\\Users\\WIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WIN\\source\\repos\\ProjectCB\\View\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ani.atchemyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+        "C:\\Users\\WIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/FastCredit/_packaging/FCBankIntegrationModels/nuget/v3/index.json": {},
-        "https://pkgs.dev.azure.com/FastCredit/_packaging/fc_artifacts_feed/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\ani.atchemyan\\source\\repos\\AniAyan\\ProjectCB\\Core\\Core.csproj"
+            "C:\\Users\\WIN\\source\\repos\\ProjectCB\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\WIN\\source\\repos\\ProjectCB\\Core\\Core.csproj"
             }
           }
         }

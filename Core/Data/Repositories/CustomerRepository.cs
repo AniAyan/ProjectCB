@@ -1,5 +1,7 @@
 ﻿//using Core.Entities;
+using Core.Mapping;
 using Core.DTO;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,29 +13,18 @@ namespace Core.Data.Repositories
     public class CustomerRepository
     {
         private readonly AppDbContext dbContext;
+        private readonly CustomerEntityDTOMapper customerMapper;
 
-        public CustomerRepository(AppDbContext dbContext)
+        public CustomerRepository(AppDbContext dbContext, CustomerEntityDTOMapper customerMapper)
         {
             this.dbContext = dbContext;
+            this.customerMapper = customerMapper;
         }
 
-        public List<Customer> GetCustomers()
+        public List<CustomerDTO> GetCustomers()
         {
-            var customersDB = dbContext.Customers.ToList();
-            var customersDTO = new List<Customer>();
-
-            foreach (var customerDB in customersDB)
-            {
-                var customer = new Customer
-                {
-                    Id = customerDB.Id,
-                    FirstName = customerDB.FirstName,
-                    LastName = customerDB.LastName,
-                    Region = customerDB.Region.Name,
-                    Address = customerDB.Address
-                };
-                customersDTO.Add(customer);
-            }
+            var customersDB = dbContext.Customers.Include(c => c.Region).ToList();
+            var customersDTO = customerMapper.MapToDTOList(customersDB);
 
             return customersDTO;
         }
