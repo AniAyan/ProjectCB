@@ -20,14 +20,14 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Type));
             }
         }
-        public int customer;
-        public int Customer
+        public int customerId;
+        public int CustomerId
         {
-            get => customer;
+            get => customerId;
             set
             {
-                customer = value;
-                OnPropertyChanged(nameof(Customer));
+                customerId = value;
+                OnPropertyChanged(nameof(CustomerId));
             }
         }
         public int amount;

@@ -11,7 +11,7 @@ namespace Core.DTO
     {
         public int Id { get; set; }
         public string Type { get; set; }
-        public int Customer { get; set; }
+        public int CustomerId { get; set; }
         public int Amount { get; set; }
         public DateTime Date { get; set; }
         public int Rate { get; set; }
