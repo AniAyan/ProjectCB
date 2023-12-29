@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace View.ViewModels
 {
     public class ApplicationViewModel : ViewModelBase
     {
-        public int Id;
+        public int Id { get; set; }
 
         private string type;
         public string Type
@@ -20,7 +21,7 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Type));
             }
         }
-        public int customerId;
+        private int customerId;
         public int CustomerId
         {
             get => customerId;
@@ -30,7 +31,7 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(CustomerId));
             }
         }
-        public int amount;
+        private int amount;
         public int Amount
         {
             get => amount;
@@ -40,7 +41,7 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Amount));
             }
         }
-        public DateTime date;
+        private DateTime date;
         public DateTime Date
         {
             get => date;
@@ -50,7 +51,7 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Date));
             }
         }
-        public int rate;
+        private int rate;
         public int Rate
         {
             get => rate;
@@ -60,8 +61,8 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Rate));
             }
         }
-        public string branch;
-        public string Branch
+        private Branch branch;
+        public Branch Branch
         {
             get => branch; 
             set

@@ -60,12 +60,16 @@ namespace View
             services.AddScoped<AppDbContext>();
             services.AddScoped<CustomerEntityDTOMapper>();
             services.AddScoped<ApplicationEntityDTOMapper>();
+            services.AddScoped<BranchEntityDTOMapper>();
             services.AddScoped<CustomerRepository>();
             services.AddScoped<ApplicationRepository>();
+            services.AddScoped<BranchRepository>();
             services.AddScoped<CustomerDTOViewModelMapper>();
             services.AddScoped<ApplicationDTOViewModelMapper>();
+            services.AddScoped<BranchDTOViewModelMapper>();
 
             services.AddTransient<MainViewModel>();
+            services.AddTransient<BranchUpdateViewModel>();
 
             return services.BuildServiceProvider();
         }

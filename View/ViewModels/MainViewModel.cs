@@ -17,15 +17,8 @@ namespace View.ViewModels
         private readonly ApplicationRepository applicationRepository;
         private readonly CustomerDTOViewModelMapper customerMapper;
         private readonly ApplicationDTOViewModelMapper applicationMapper;
-        public MainViewModel(CustomerRepository customerRepository, ApplicationRepository applicationRepository, CustomerDTOViewModelMapper customerMapper, ApplicationDTOViewModelMapper applicationMapper)
-        {
-            this.customerRepository = customerRepository;
-            this.applicationRepository = applicationRepository;
-            this.customerMapper = customerMapper;
-            this.applicationMapper = applicationMapper;
-            LoadCustomers();
-        }
-
+        private readonly BranchUpdateViewModel branchUpdateViewModel;
+        
         private ObservableCollection<CustomerViewModel> customers;
         public ObservableCollection<CustomerViewModel> Customers
         {
@@ -36,7 +29,20 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Customers));
             }
         }
-        public ObservableCollection<ApplicationViewModel> selectedCustomerApplications;
+
+        public MainViewModel(CustomerRepository customerRepository, ApplicationRepository applicationRepository, 
+                             CustomerDTOViewModelMapper customerMapper, ApplicationDTOViewModelMapper applicationMapper,
+                             BranchUpdateViewModel branchUpdateViewModel)
+        {
+            this.customerRepository = customerRepository;
+            this.applicationRepository = applicationRepository;
+            this.customerMapper = customerMapper;
+            this.applicationMapper = applicationMapper;
+            this.branchUpdateViewModel = branchUpdateViewModel;
+            LoadCustomers();
+        }
+
+        private ObservableCollection<ApplicationViewModel> selectedCustomerApplications;
         public ObservableCollection<ApplicationViewModel> SelectedCustomerApplications
         {
             get { return selectedCustomerApplications; }
@@ -61,5 +67,10 @@ namespace View.ViewModels
             SelectedCustomerApplications = new ObservableCollection<ApplicationViewModel>(applicationMapper.MapToViewModelList(applicationsFromCore));
         }
 
+        public void OpenBranchUpdateWindow(ApplicationViewModel selectedApplication)
+        {
+            BranchUpdateWindow updateWindow = new BranchUpdateWindow(branchUpdateViewModel, selectedApplication);
+            updateWindow.ShowDialog();
+        }
     }
 }

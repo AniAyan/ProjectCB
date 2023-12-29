@@ -27,14 +27,22 @@ namespace View
         }
         private void Customer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            // Get the selected item from the DataGrid
             MainViewModel mainViewModel = DataContext as MainViewModel;
             CustomerViewModel selectedCustomer = customerGrid.SelectedItem as CustomerViewModel;
 
             if (mainViewModel != null && selectedCustomer != null)
             {
-                // Call the method in your ViewModel with the selected data
                 mainViewModel.UpdateCustomerApplications(selectedCustomer);
+            }
+        }
+        private void BranchCell_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MainViewModel mainViewModel = DataContext as MainViewModel;
+            ApplicationViewModel selectedApplication = applicationGrid.SelectedItem as ApplicationViewModel;
+
+            if (mainViewModel != null && selectedApplication != null)
+            {
+                mainViewModel.OpenBranchUpdateWindow(selectedApplication);
             }
         }
     }

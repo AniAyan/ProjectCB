@@ -11,7 +11,7 @@ namespace View.ViewModels
 {
     public class CustomerViewModel : ViewModelBase
     {
-        public int Id;
+        public int Id { get; set; }
 
         private string firstName;
         public string FirstName 

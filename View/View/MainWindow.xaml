@@ -28,13 +28,20 @@
         </DataGrid>
 
         <DataGrid Grid.Row="1" 
+                  Name="applicationGrid"
                   ItemsSource="{Binding SelectedCustomerApplications}" 
                   AutoGenerateColumns="False" 
                   CanUserAddRows="False" 
                   SelectionMode="Single" 
                   IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Branch" Binding="{Binding Branch}" />
+                <DataGridTextColumn Header="Branch" Binding="{Binding Branch.Name}">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <EventSetter Event="MouseDoubleClick" Handler="BranchCell_DoubleClick"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
                 <DataGridTextColumn Header="CustomerId" Binding="{Binding CustomerId}" />
                 <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
                 <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" />
