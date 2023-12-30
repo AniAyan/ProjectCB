@@ -55,6 +55,7 @@ namespace View.ViewModels
                 }
             }
         }
+        private CustomerViewModel selectedCustomer { get; set; }
         private void LoadCustomers()
         {
             var customersFromCore = customerRepository.GetCustomers();
@@ -63,6 +64,7 @@ namespace View.ViewModels
 
         public void UpdateCustomerApplications(CustomerViewModel selectedCustomer)
         {
+            this.selectedCustomer = selectedCustomer;
             var applicationsFromCore = applicationRepository.GetApplicationsByCustomerId(selectedCustomer.Id);
             SelectedCustomerApplications = new ObservableCollection<ApplicationViewModel>(applicationMapper.MapToViewModelList(applicationsFromCore));
         }
@@ -71,6 +73,7 @@ namespace View.ViewModels
         {
             BranchUpdateWindow updateWindow = new BranchUpdateWindow(branchUpdateViewModel, selectedApplication);
             updateWindow.ShowDialog();
+            UpdateCustomerApplications(selectedCustomer);
         }
     }
 }

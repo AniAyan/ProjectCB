@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Select Branch:" />
-            <ComboBox Name="branchComboBox" ItemsSource="{Binding Branches}" DisplayMemberPath="BranchName" SelectedValuePath="BranchId" />
+            <ComboBox Name="branchComboBox" ItemsSource="{Binding Branches}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectedValue="{Binding SelectedBranch}"/>
             <Button Content="Update Branch" Command="{Binding UpdateBranchCommand}" Margin="0,10,0,0" />
         </StackPanel>
     </Grid>

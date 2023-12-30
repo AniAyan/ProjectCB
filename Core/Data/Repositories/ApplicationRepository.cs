@@ -1,4 +1,5 @@
 ﻿using Core.DTO;
+using Core.Entities;
 using Core.Mapping;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,21 +20,39 @@ namespace Core.Data.Repositories
             this.dbContext = dbContext;
             this.applicationMapper = applicationMapper;
         }
-
-        public List<ApplicationDTO> GetApplications()
+        private List<Application> GetApplicationsDB()
         {
             var applicationsDB = dbContext.Applications.Include(c => c.Type)
                                                        .Include(c => c.Customer)
                                                        .Include(c => c.Branch)
                                                        .ToList();
-            var applicationsDTO = applicationMapper.MapToDTOList(applicationsDB);
+
+            return applicationsDB;
+        }
+        public List<ApplicationDTO> GetApplications()
+        {
+            var applicationsDTO = applicationMapper.MapToDTOList(GetApplicationsDB());
 
             return applicationsDTO;
         }
 
+        private Application GetApplicationById(int appId)
+        {
+            return GetApplicationsDB().SingleOrDefault(a => a.Id == appId);
+        }
         public List<ApplicationDTO> GetApplicationsByCustomerId(int customerId)
         {
             return GetApplications().Where(a => a.CustomerId == customerId).ToList();
+        }
+        public void UpdateBranchInApplication(int applicationId, int newBranchId)
+        {
+            var application = dbContext.Applications.Find(applicationId);
+
+            if (application != null)
+            {
+                application.Branch = dbContext.Branches.Find(newBranchId);
+                dbContext.SaveChanges();
+            }
         }
     }
 }

@@ -35,7 +35,7 @@
                   SelectionMode="Single" 
                   IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Branch" Binding="{Binding Branch.Name}">
+                <DataGridTextColumn Header="Branch" Binding="{Binding Branch}">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
                             <EventSetter Event="MouseDoubleClick" Handler="BranchCell_DoubleClick"/>

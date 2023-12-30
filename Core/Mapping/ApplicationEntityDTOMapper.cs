@@ -19,7 +19,8 @@ namespace Core.Mapping
             {
                 cfg.CreateMap<Application, ApplicationDTO>()
                    .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type.Name))
-                   .ForMember(dest => dest.CustomerId, opt => opt.MapFrom(src => src.Customer.Id));
+                   .ForMember(dest => dest.CustomerId, opt => opt.MapFrom(src => src.Customer.Id))
+                   .ForMember(dest => dest.Branch, opt => opt.MapFrom(src => src.Branch.Name));
             });
 
             mapper = configuration.CreateMapper();

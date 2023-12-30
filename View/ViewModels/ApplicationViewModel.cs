@@ -61,8 +61,8 @@ namespace View.ViewModels
                 OnPropertyChanged(nameof(Rate));
             }
         }
-        private Branch branch;
-        public Branch Branch
+        private string branch;
+        public string Branch
         {
             get => branch; 
             set

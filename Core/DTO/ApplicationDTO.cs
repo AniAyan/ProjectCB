@@ -15,6 +15,6 @@ namespace Core.DTO
         public int Amount { get; set; }
         public DateTime Date { get; set; }
         public int Rate { get; set; }
-        public Branch Branch { get; set; }
+        public string Branch { get; set; }
     }
 }
