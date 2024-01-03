@@ -1,5 +1,0 @@
-C:\Users\WIN\source\repos\ProjectCB\Mapping\obj\Debug\net6.0\Mapping.csproj.AssemblyReference.cache
-C:\Users\WIN\source\repos\ProjectCB\Mapping\obj\Debug\net6.0\Mapping.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\WIN\source\repos\ProjectCB\Mapping\obj\Debug\net6.0\Mapping.AssemblyInfoInputs.cache
-C:\Users\WIN\source\repos\ProjectCB\Mapping\obj\Debug\net6.0\Mapping.AssemblyInfo.cs
-C:\Users\WIN\source\repos\ProjectCB\Mapping\obj\Debug\net6.0\Mapping.csproj.CoreCompileInputs.cache
