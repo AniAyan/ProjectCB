@@ -36,10 +36,6 @@ namespace Core.Data.Repositories
             return applicationsDTO;
         }
 
-        private Application GetApplicationById(int appId)
-        {
-            return GetApplicationsDB().SingleOrDefault(a => a.Id == appId);
-        }
         public List<ApplicationDTO> GetApplicationsByCustomerId(int customerId)
         {
             return GetApplications().Where(a => a.CustomerId == customerId).ToList();
